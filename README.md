@@ -1,0 +1,2 @@
+# A-Physically-Informed-QUBO-Formulation-for-pi-stackionf-interactions-in-molecular-docking
+This repository contains the code to reproduce the results of “A Physically Informed QUBO Formulation for π-Stacking Interactions in Molecular Docking.” It includes scripts to generate the interaction energy curves for two benzene molecules and to perform the simulated annealing computations used in the study.
