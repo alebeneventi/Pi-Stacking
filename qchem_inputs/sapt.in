@@ -1,0 +1,28 @@
+$rem
+jobtype xsapt
+method lrc-wpbe
+basis def2-tzvpd
+lrc_dft true
+scf_guess autosad
+thresh 12
+$end
+
+$xpol
+embed none
+dft-lrc
+print 3
+$end
+
+$sapt
+algorithm ao
+basis projected
+print 3
+Dispersion MBD
+$end
+
+$lrc_omega
+340
+340
+$end
+
+<molecular_geometry>
