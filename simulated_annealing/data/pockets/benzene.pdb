@@ -1,0 +1,9 @@
+HEADER    BENZENE
+COMPND    BENZENE
+ATOM      6  CG  TYR A  88      -0.713   1.211   0.034  1.00  9.28           C
+ATOM      7  CD1 TYR A  88       0.682   1.211  -0.026  1.00  9.73           C
+ATOM      8  CD2 TYR A  88      -1.376  -0.012  -0.022  1.00 12.95           C
+ATOM      9  CE1 TYR A  88       1.394   0.013   0.006  1.00 12.58           C
+ATOM     10  CE2 TYR A  88      -0.691  -1.224   0.001  1.00 24.35           C
+ATOM     11  CZ  TYR A  88       0.705  -1.199   0.008  1.00 25.99           C
+END
