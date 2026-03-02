@@ -19,11 +19,10 @@ Contains Python scripts to perform molecular docking using **simulated annealing
 > See the `simulated_annealing/README.md` for detailed instructions on how to run the simulations.
 
 ### 2. `qchem_inputs`
-Contains input files for **Q-Chem simulations** used to calibrate and validate interaction energies, including:
+Contains Q-Chem (v6.3) input files and automation scripts for calculating $\pi-\pi$ interaction energies between benzene dimers using SAPT/XSAPT protocols.
 
-- Ligand and pocket geometries in `.pdb` or `.xyz` format.  
-- Example input files for π-stacking energy calculations.  
-- Scripts to automate batch calculations of interaction energies along translations or rotations.
+Based on the computational framework from JACS 2024, the suite includes a Python utility for rigid roto-translations of molecular geometries and a SLURM template optimized for the Leonardo (CINECA) HPC cluster. 
+It is designed to streamline energy decomposition analysis and distance/rotation scans for molecular dimers.
 
 ## Credits
 - Original framework developed by collaborators as part of **MOSEGAD**.  
