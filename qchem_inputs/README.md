@@ -43,8 +43,7 @@ For each intermolecular configuration:
 The collection of residual interaction energies and their associated benzene dimer geometries defines a multidimensional energy surface.  
 This surface is subsequently interpolated and used to construct a continuous representation of the π–π interaction energy.
 
-In particular, the interpolated energy surfaces are implemented within the function `pistacking_energy`, located in:
-  `simulated_annealing/src/utils.py`
+In particular, the interpolated energy surfaces are implemented within the function `pistacking_energy`, located in `simulated_annealing/src/utils.py`
 
 The interpolated residual energy obtained from this function is the quantity employed within the simulated annealing docking framework.
 
