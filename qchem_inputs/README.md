@@ -1,3 +1,39 @@
+# Q-Chem Input Files for π--π Interaction Energy Calculations
+
+## Overview
+
+This repository contains the **Q-Chem input files** used to compute the interaction energy between two benzene molecules within the framework described in the SAPT/XSAPT section of the official Q-Chem Manual (v6.3, Section 12.10.4):
+
+https://manual.q-chem.com/6.3/Ch12.S10.SS4.html
+
+The calculations follow the computational protocol adopted in the associated scientific work and allow for the extraction of the total interaction energy and its physical components.
+
+------------------------------------------------------------------------
+
+## Folder Structure
+
+The folder includes the following Q-Chem input files:
+
+- `dhf.in` --- Density-Fitted Hartree--Fock calculation  
+- `sapt.in` --- SAPT(DFT) interaction energy decomposition  
+- `xsapt.in` --- XSAPT interaction energy calculation  
+
+Additionally:
+
+- `molecular_geometry.in` --- Contains the Cartesian coordinates of the molecular dimer  
+- `rototraslation.py` --- Python script to generate rigid roto-translations of the molecular dimer in Cartesian space  
+
+The script `rototraslation.py` generates modified geometries corresponding to different intermolecular configurations and outputs a file named:
+
+- `geometry.in` --- Automatically generated geometry file that can be directly used as the molecular block for SAPT/XSAPT calculations  
+
+------------------------------------------------------------------------
+
+## Important Usage Instructions
+
+Inside each input file (`dhf.in`, `sapt.in`, `xsapt.in`), the placeholder block:
+
+<molecular_geometry>
 
 **must be replaced** with the full content of a geometry file.
 
