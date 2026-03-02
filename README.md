@@ -2,7 +2,7 @@
 
 This repository contains code and input data for studying **molecular docking** using classical simulated annealing, with a focus on **π-stacking interactions**. The project builds upon a quantum-based docking framework originally developed by collaborators as part of the **PNRR research project MOSEGAD**, which explored quantum computing in drug discovery.  
 
-In this repository, the quantum annealing part has been removed, leaving a **classical simulated annealing approach**, and additional modeling of **π-stacking interactions** has been added.
+In this repository, we adopt a **classical simulated annealing framework**, further enhanced by incorporating an explicit treatment of **π-stacking interactions**.
 
 ## Repository Structure
 
@@ -29,6 +29,9 @@ It is designed to streamline energy decomposition analysis and distance/rotation
 ## Credits
 - Original framework developed by collaborators as part of **MOSEGAD**.  
 - Current modifications by **Alessandro Beneventi**, adding π-stacking and focusing on classical simulated annealing.  
+
+## License
+This project is licensed under the MIT License – see the LICENSE file for details.
 
 
 
