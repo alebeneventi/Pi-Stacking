@@ -1,7 +1,7 @@
 # Q-Chem Input Files for π--π Interaction Energy Calculations
 
 ## Overview
-
+  
 This repository contains the **Q-Chem input files** used to compute the interaction energy between two benzene molecules within the framework described in the SAPT/XSAPT section of the official Q-Chem Manual (v6.3, Section 12.10.4):
 
 https://manual.q-chem.com/6.3/Ch12.S10.SS4.html
@@ -38,7 +38,15 @@ For each intermolecular configuration:
 1. The total interaction energy is computed via SAPT or XSAPT.
 2. The classical electrostatic and van der Waals contributions are computed using `electrostatic_vdw.py`.
 3. The classical contribution is subtracted from the SAPT/XSAPT total energy.
-4. The resulting **residual interaction energy** is used as input for the simulated annealing docking model.
+4. The resulting **residual interaction energy** is stored together with the corresponding relative molecular configuration.
+
+The collection of residual interaction energies and their associated benzene dimer geometries defines a multidimensional energy surface.  
+This surface is subsequently interpolated and used to construct a continuous representation of the π–π interaction energy.
+
+In particular, the interpolated energy surfaces are implemented within the function `pistacking_energy`, located in:
+  simulated_annealing/src/utils.py
+
+The interpolated residual energy obtained from this function is the quantity employed within the simulated annealing docking framework.
 
 ------------------------------------------------------------------------
 
