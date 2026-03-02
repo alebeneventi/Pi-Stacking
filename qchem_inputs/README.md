@@ -22,10 +22,8 @@ Additionally:
 
 - `molecular_geometry.in` --- Contains the Cartesian coordinates of the molecular dimer  
 - `rototraslation.py` --- Python script to generate rigid roto-translations of the molecular dimer in Cartesian space  
-
-The script `rototraslation.py` generates modified geometries corresponding to different intermolecular configurations and outputs a file named:
-
 - `geometry.in` --- Automatically generated geometry file that can be directly used as the molecular block for SAPT/XSAPT calculations  
+- `job_leonardo.slurm` --- Example SLURM job script for running the calculations on the Leonardo HPC system (CINECA)
 
 ------------------------------------------------------------------------
 
@@ -58,6 +56,27 @@ No further modifications to the input files are required, provided the molecular
 
 ------------------------------------------------------------------------
 
+## HPC Execution (Leonardo – CINECA)
+
+An example SLURM job script (`job_leonardo.slurm`) is provided for running the calculations on the **Leonardo HPC system at CINECA**.
+
+The script includes:
+
+- Proper module loading for Q-Chem  
+- Scratch directory configuration  
+- OpenMP parallelization setup  
+- Sequential execution of DHF, SAPT, and XSAPT calculations  
+- Automatic extraction of the total interaction energy  
+
+Users running on different HPC systems may need to adapt:
+
+- Partition and QoS settings  
+- Account information  
+- Module names  
+- Number of cores  
+
+------------------------------------------------------------------------
+
 ## Scientific Reference
 
 The input files were **kindly provided by the authors** of the following article:
@@ -74,4 +93,5 @@ If you use these inputs in your research, please cite the original article accor
 
 - Q-Chem (version 6.3 or compatible)  
 - Python 3.x (for running `rototraslation.py`)  
+- SLURM workload manager (for HPC execution)  
 - Sufficient computational resources for SAPT/XSAPT calculations  
