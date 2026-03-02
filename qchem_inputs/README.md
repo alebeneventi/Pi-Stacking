@@ -8,6 +8,9 @@ https://manual.q-chem.com/6.3/Ch12.S10.SS4.html
 
 The calculations follow the computational protocol adopted in the associated scientific work and allow for the extraction of the total interaction energy and its physical components.
 
+In addition, a Python script (`electrostatic_vdw.py`) is provided to compute, for each molecular configuration, the **classical electrostatic and van der Waals interaction energy** between the two fragments.  
+This classical contribution is subtracted from the total interaction energy obtained from SAPT/XSAPT calculations in order to obtain the **residual interaction energy**, which is subsequently used in the simulated annealing framework.
+
 ------------------------------------------------------------------------
 
 ## Folder Structure
@@ -23,7 +26,19 @@ Additionally:
 - `molecular_geometry.in` --- Contains the Cartesian coordinates of the molecular dimer  
 - `rototraslation.py` --- Python script to generate rigid roto-translations of the molecular dimer in Cartesian space  
 - `geometry.in` --- Automatically generated geometry file that can be directly used as the molecular block for SAPT/XSAPT calculations  
+- `electrostatic_vdw.py` --- Python script to compute classical Coulomb and Lennard-Jones (vdW) interaction energies for a given configuration  
 - `job.slurm` --- Example SLURM job script for running the calculations on the Leonardo HPC system (CINECA)
+
+------------------------------------------------------------------------
+
+## Classical Energy Correction (`electrostatic_vdw.py`)
+
+For each intermolecular configuration:
+
+1. The total interaction energy is computed via SAPT or XSAPT.
+2. The classical electrostatic and van der Waals contributions are computed using `electrostatic_vdw.py`.
+3. The classical contribution is subtracted from the SAPT/XSAPT total energy.
+4. The resulting **residual interaction energy** is used as input for the simulated annealing docking model.
 
 ------------------------------------------------------------------------
 
@@ -51,6 +66,7 @@ To obtain energy profiles corresponding to different intermolecular arrangements
 - Apply rigid roto-translations to the two benzene molecules using `rototraslation.py`  
 - Generate a new `geometry.in` file  
 - Replace the `<molecular_geometry>` block in the input files accordingly  
+- Compute the classical correction using `electrostatic_vdw.py`  
 
 No further modifications to the input files are required, provided the molecular geometry block is correctly replaced.
 
@@ -92,6 +108,6 @@ If you use these inputs in your research, please cite the original article accor
 ## Software Requirements
 
 - Q-Chem (version 6.3 or compatible)  
-- Python 3.x (for running `rototraslation.py`)  
+- Python 3.x (for running `rototraslation.py` and `electrostatic_vdw.py`)  
 - SLURM workload manager (for HPC execution)  
 - Sufficient computational resources for SAPT/XSAPT calculations  
