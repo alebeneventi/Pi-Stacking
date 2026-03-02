@@ -23,7 +23,7 @@ Additionally:
 - `molecular_geometry.in` --- Contains the Cartesian coordinates of the molecular dimer  
 - `rototraslation.py` --- Python script to generate rigid roto-translations of the molecular dimer in Cartesian space  
 - `geometry.in` --- Automatically generated geometry file that can be directly used as the molecular block for SAPT/XSAPT calculations  
-- `job_leonardo.slurm` --- Example SLURM job script for running the calculations on the Leonardo HPC system (CINECA)
+- `job.slurm` --- Example SLURM job script for running the calculations on the Leonardo HPC system (CINECA)
 
 ------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ No further modifications to the input files are required, provided the molecular
 
 ## HPC Execution (Leonardo – CINECA)
 
-An example SLURM job script (`job_leonardo.slurm`) is provided for running the calculations on the **Leonardo HPC system at CINECA**.
+An example SLURM job script (`job.slurm`) is provided for running the calculations on the **Leonardo HPC system at CINECA**.
 
 The script includes:
 
